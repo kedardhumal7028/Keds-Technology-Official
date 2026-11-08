@@ -1,61 +1,69 @@
 import React from "react";
-import KedsLogo from "@/components/KedsLogo";
-import NeonAtmosphere from "@/components/NeonAtmosphere";
-import Link from "next/link";
+import type { Metadata } from "next";
+import ContactFormSection from "@/components/ContactFormSection";
+import { Sparkles, HelpCircle } from "lucide-react";
 
-export const metadata = {
-  title: "Contact | Keds Technology",
-  description: "Official contact portal for Keds Technology.",
+export const metadata: Metadata = {
+  title: "Contact Us & Project Inquiry | Keds Technology",
+  description:
+    "Get in touch with Keds Technology's senior engineering team. Request a free architecture assessment or consultation for your software project.",
 };
 
 export default function ContactPage() {
+  const faqs = [
+    {
+      q: "How fast do you respond to project inquiries?",
+      a: "Our founding architects review and reply to every qualified technical inquiry within 24 hours. Urgent requests can be discussed immediately on our direct WhatsApp channel.",
+    },
+    {
+      q: "Do you sign Non-Disclosure Agreements (NDAs)?",
+      a: "Yes. Confidentiality is paramount. We gladly execute mutual NDAs prior to reviewing proprietary business logic, schemas, or product specs.",
+    },
+    {
+      q: "What engagement models do you offer?",
+      a: "We offer both fixed-price milestone delivery for well-defined projects, and dedicated senior engineering squads on flexible monthly retainers.",
+    },
+    {
+      q: "Who owns the intellectual property (IP) and source code?",
+      a: "You do. 100% of the repository, design tokens, databases, and deployment scripts belong exclusively to you upon milestone signoff.",
+    },
+  ];
+
   return (
-    <main className="relative min-h-screen bg-[#05020c] text-white px-6 py-16 flex flex-col items-center justify-between overflow-hidden">
-      {/* Modern Background */}
-      <NeonAtmosphere />
+    <main className="w-full pt-32 pb-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Contact Form Section */}
+        <ContactFormSection />
 
-      {/* Header Back Link */}
-      <header className="relative z-20 w-full max-w-4xl flex items-center justify-between">
-        <Link
-          href="/"
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-purple-500/30 bg-purple-950/40 text-xs font-medium text-purple-200 hover:text-white hover:border-purple-400 backdrop-blur-md transition-all duration-300"
-        >
-          ← Back to Home
-        </Link>
-        <span className="text-xs text-purple-400/50 tracking-widest uppercase">
-          Official Contact
-        </span>
-      </header>
+        {/* Consultation FAQ Section */}
+        <div className="mt-20 max-w-4xl mx-auto space-y-8">
+          <div className="text-center space-y-2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/40 text-xs text-purple-300 font-medium">
+              <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
+              <span>Frequently Asked Questions</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white">
+              Working with Keds Technology
+            </h2>
+          </div>
 
-      {/* Center Box */}
-      <div className="relative z-20 max-w-2xl w-full text-center my-auto py-10">
-        <KedsLogo size="large" showTagline={true} />
-
-        <div className="mt-12 sm:mt-16 p-8 sm:p-10 rounded-3xl border border-purple-500/30 bg-[#0b0518]/80 backdrop-blur-xl shadow-[0_0_40px_rgba(168,85,247,0.25)]">
-          <p className="text-xs sm:text-sm font-semibold text-purple-300 tracking-[0.25em] uppercase">
-            Official Correspondence
-          </p>
-
-          <a
-            href="mailto:kedstechnology@gmail.com"
-            className="mt-6 inline-block text-xl sm:text-3xl md:text-4xl font-mono font-bold text-white hover:text-purple-300 transition-colors duration-300 tracking-wide break-all"
-            style={{
-              textShadow: "0 0 25px rgba(192, 132, 252, 0.5)",
-            }}
-          >
-            kedstechnology@gmail.com
-          </a>
-
-          <p className="mt-4 text-xs sm:text-sm text-purple-300/60 font-light">
-            For official communications and general inquiries. All developments remain confidential.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {faqs.map((faq, idx) => (
+              <div
+                key={idx}
+                className="p-6 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md space-y-2"
+              >
+                <h3 className="text-base font-bold text-white">
+                  {faq.q}
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light">
+                  {faq.a}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="relative z-20 text-xs text-purple-400/50 tracking-wider">
-        © {new Date().getFullYear()} Keds Technology. All rights reserved.
-      </footer>
     </main>
   );
 }

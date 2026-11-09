@@ -4,6 +4,8 @@ import HeroSection from "@/components/HeroSection";
 import AboutCompanySection from "@/components/AboutCompanySection";
 import OurExpertiseSection from "@/components/OurExpertiseSection";
 import ContactFormSection from "@/components/ContactFormSection";
+import { HomeFestivalPopup } from "@/features/festival-preview/HomeFestivalPopup";
+
 
 export const metadata: Metadata = {
   title: "Keds Technology | Custom Website, Mobile App & Software Development",
@@ -59,7 +61,11 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="w-full overflow-hidden">
+      {/* Automated Multi-Year Festival Greeting Poster (Pops up automatically for visitors during festival window) */}
+      <HomeFestivalPopup />
+
       {/* 1. Hero Section: Diagonal Infinite Cards Stream with AI Images */}
+
       <HeroSection />
 
       {/* 2. About Section: Who We Are, Mission & Why Choose Keds Technology */}

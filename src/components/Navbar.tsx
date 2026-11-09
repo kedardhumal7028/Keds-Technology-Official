@@ -5,10 +5,17 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import KedsLogo from "./KedsLogo";
 import ConsultationModal from "./ConsultationModal";
+import { NavbarFestivalDecoration } from "@/features/festival-preview/NavbarFestivalDecoration";
+import { FestivalId } from "@/features/festival-preview/festivalData";
 import { ChevronDown, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
 
-export default function Navbar() {
+interface NavbarProps {
+  overrideFestivalId?: FestivalId;
+}
+
+export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
   const [scrolled, setScrolled] = useState(false);
+
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [projectsDropdownOpen, setProjectsDropdownOpen] = useState(false);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
@@ -45,20 +52,29 @@ export default function Navbar() {
     { name: "Contact", href: "/contact" },
   ];
 
+  const isPreview = pathname === "/festival-preview";
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`${
+          isPreview ? "relative" : "fixed top-0 left-0 right-0"
+        } z-40 transition-all duration-300 ${
           scrolled
             ? "bg-[#000000]/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
-            : "bg-[#070210]/85 backdrop-blur-md border-b border-purple-500/20 py-4 shadow-[0_4px_20px_rgba(124,58,237,0.15)]"
+            : "bg-[#070210]/85 backdrop-blur-md border-b border-purple-500/20 py-3.5 sm:py-4 shadow-[0_4px_20px_rgba(124,58,237,0.15)]"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        {/* Dynamic Multi-Year Festival Decoration (Akash Kandil & Firecracker Sparklers) */}
+        <NavbarFestivalDecoration overrideFestivalId={overrideFestivalId} />
+
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
           {/* Brand Logo */}
           <div className="flex items-center gap-3">
             <KedsLogo size="small" showTagline={false} />
           </div>
+
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">

@@ -68,14 +68,14 @@ export default function ContactFormSection() {
             <div className="space-y-3">
               <a
                 href="mailto:kedstechnology@gmail.com"
-                className="p-4 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md flex items-center gap-4 hover:border-cyan-400/40 transition-all group"
+                className="p-4 rounded-2xl border border-purple-500/20 bg-[#0D0720]/80 backdrop-blur-md flex items-center gap-4 hover:border-purple-400/50 transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:text-cyan-300 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:text-purple-200 transition-colors">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs text-zinc-400">Email Us</div>
-                  <div className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                  <div className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
                     kedstechnology@gmail.com
                   </div>
                 </div>
@@ -83,20 +83,20 @@ export default function ContactFormSection() {
 
               <a
                 href="tel:+919511273939"
-                className="p-4 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md flex items-center gap-4 hover:border-cyan-400/40 transition-all group"
+                className="p-4 rounded-2xl border border-purple-500/20 bg-[#0D0720]/80 backdrop-blur-md flex items-center gap-4 hover:border-purple-400/50 transition-all group"
               >
-                <div className="w-10 h-10 rounded-xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-300 group-hover:text-cyan-200 transition-colors">
+                <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:text-purple-200 transition-colors">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
                   <div className="text-xs text-zinc-400">Call / WhatsApp</div>
-                  <div className="text-sm font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                  <div className="text-sm font-semibold text-white group-hover:text-purple-300 transition-colors">
                     +91 95112 73939
                   </div>
                 </div>
               </a>
 
-              <div className="p-4 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md flex items-center gap-4">
+              <div className="p-4 rounded-2xl border border-purple-500/20 bg-[#0D0720]/80 backdrop-blur-md flex items-center gap-4">
                 <div className="w-10 h-10 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300">
                   <MapPin className="w-5 h-5" />
                 </div>
@@ -121,7 +121,7 @@ export default function ContactFormSection() {
 
           {/* Right Column: Form */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-10 rounded-3xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
+            <div className="p-6 sm:p-10 rounded-3xl border border-purple-500/30 bg-[#0D0720]/95 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)]">
               {!submitted ? (
                 <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -135,7 +135,7 @@ export default function ContactFormSection() {
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Vikram Joshi"
-                        className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all"
                       />
                     </div>
                     <div>
@@ -147,7 +147,7 @@ export default function ContactFormSection() {
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                         placeholder="e.g. Acme Corp"
-                        className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all"
                       />
                     </div>
                   </div>
@@ -163,7 +163,7 @@ export default function ContactFormSection() {
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="you@company.com"
-                        className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all"
                       />
                     </div>
                     <div>
@@ -175,8 +175,8 @@ export default function ContactFormSection() {
                         required
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
-                        className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                        placeholder="+91 95112 73939"
+                        className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all"
                       />
                     </div>
                   </div>
@@ -188,7 +188,7 @@ export default function ContactFormSection() {
                     <select
                       value={formData.service}
                       onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white focus:outline-none focus:border-purple-400 text-sm transition-all"
                     >
                       <option value="Website Development">Website Development</option>
                       <option value="Mobile App Development">Mobile App Development</option>
@@ -211,7 +211,7 @@ export default function ContactFormSection() {
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       placeholder="Describe your project, goals, or any questions you have..."
-                      className="w-full px-4 py-3 rounded-xl bg-[#070c1e] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all resize-none"
                     />
                   </div>
 
@@ -224,13 +224,13 @@ export default function ContactFormSection() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(124,58,237,0.5)] hover:shadow-[0_0_40px_rgba(0,212,255,0.5)] transition-all flex items-center justify-center gap-2 group cursor-pointer active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-semibold text-sm sm:text-base shadow-[0_0_30px_rgba(168,85,247,0.5)] hover:shadow-[0_0_40px_rgba(192,132,252,0.6)] transition-all flex items-center justify-center gap-2 group cursor-pointer active:scale-98 disabled:opacity-70 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? (
                       <span>Sending your message...</span>
                     ) : (
                       <>
-                        <Sparkles className="w-4 h-4 text-cyan-300" />
+                        <Sparkles className="w-4 h-4 text-purple-200" />
                         <span>Send Message</span>
                         <Send className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                       </>

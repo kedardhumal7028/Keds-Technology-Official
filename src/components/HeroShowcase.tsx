@@ -31,7 +31,7 @@ export default function HeroShowcase() {
       />
 
       {/* Main Glass Device Container */}
-      <div className="relative rounded-2xl sm:rounded-3xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-2xl shadow-[0_25px_70px_rgba(0,0,0,0.8),0_0_40px_rgba(124,58,237,0.15)] overflow-hidden">
+      <div className="relative rounded-2xl sm:rounded-3xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-2xl shadow-[0_25px_70px_rgba(0,0,0,0.8),0_0_40px_rgba(124,58,237,0.15)] overflow-hidden">
         {/* Top Browser / App Chrome Bar */}
         <div className="px-4 sm:px-6 py-3.5 bg-[#070b1a] border-b border-purple-500/20 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2">

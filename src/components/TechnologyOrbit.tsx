@@ -7,7 +7,7 @@ import { Cpu, Sparkles } from "lucide-react";
 
 export default function TechnologyOrbit() {
   return (
-    <section className="relative z-20 py-24 md:py-32 overflow-hidden border-t border-purple-900/20 bg-[#050816]">
+    <section className="relative z-20 py-24 md:py-32 overflow-hidden border-t border-purple-900/20 bg-[#06020E]">
       {/* Background Radial Glow */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] pointer-events-none opacity-20 blur-[140px]"
@@ -41,7 +41,7 @@ export default function TechnologyOrbit() {
           <div className="absolute w-[45%] h-[45%] rounded-full border border-purple-400/20" />
 
           {/* Center Hub: Keds Technology Core Logo */}
-          <div className="relative z-20 w-32 sm:w-44 aspect-[8866/1066] p-3 rounded-2xl border border-purple-500/40 bg-[#0B1023]/95 backdrop-blur-2xl shadow-[0_0_50px_rgba(124,58,237,0.5)] flex items-center justify-center">
+          <div className="relative z-20 w-32 sm:w-44 aspect-[8866/1066] p-3 rounded-2xl border border-purple-500/40 bg-[#0D0720]/95 backdrop-blur-2xl shadow-[0_0_50px_rgba(124,58,237,0.5)] flex items-center justify-center">
             <Image
               src="/images/keds-title-only.png"
               alt="Keds Technology Core Center"
@@ -68,7 +68,7 @@ export default function TechnologyOrbit() {
                 >
                   <div className="animate-orbit-reverse">
                     <div
-                      className="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl border bg-[#0B1023]/95 backdrop-blur-xl flex items-center gap-2 shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 group-hover:scale-110 cursor-pointer"
+                      className="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-2xl border bg-[#0D0720]/95 backdrop-blur-xl flex items-center gap-2 shadow-[0_0_20px_rgba(0,0,0,0.8)] transition-all duration-300 group-hover:scale-110 cursor-pointer"
                       style={{
                         borderColor: `${tech.glow}50`,
                         boxShadow: `0 0 15px ${tech.glow}30`,
@@ -91,7 +91,7 @@ export default function TechnologyOrbit() {
           {allTechnologiesByCategory.map((category) => (
             <div
               key={category.category}
-              className="p-6 rounded-3xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-xl space-y-4 shadow-[0_10px_25px_rgba(0,0,0,0.4)]"
+              className="p-6 rounded-3xl border border-purple-500/20 bg-[#0D0720]/70 backdrop-blur-xl space-y-4 shadow-[0_10px_25px_rgba(0,0,0,0.4)]"
             >
               <h3 className="text-base font-bold text-white border-b border-purple-900/30 pb-3 flex items-center gap-2">
                 <span className="w-2 h-2 rounded-full bg-cyan-400" />

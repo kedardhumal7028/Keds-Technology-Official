@@ -18,9 +18,22 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Engineering Services | Keds Technology",
+  title: "Services | Website, Mobile App & Custom Software Development",
   description:
-    "Explore Keds Technology's 10 core engineering services: Custom Web Development, Mobile Apps, Enterprise HRMS, CRM, Manufacturing ERP, and Cloud AI.",
+    "Explore Keds Technology's engineering services: Custom Website Development, iOS/Android Mobile App Development, Enterprise HRMS, CRM Systems, ERP Software, UI/UX Design, and Cloud Solutions.",
+  keywords: [
+    "Website Development Services",
+    "Mobile App Development Services",
+    "Custom Software Development",
+    "HRMS Software Development",
+    "CRM System Development",
+    "ERP Software Development",
+    "UI UX Design Services",
+    "Keds Technology Services",
+  ],
+  alternates: {
+    canonical: "https://kedstechnology.com/services",
+  },
 };
 
 export default function ServicesPage() {
@@ -77,13 +90,13 @@ export default function ServicesPage() {
               <div
                 key={service.id}
                 id={service.id}
-                className="p-8 sm:p-10 rounded-3xl border border-purple-500/25 bg-[#0B1023]/80 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] scroll-mt-28"
+                className="p-8 sm:p-10 rounded-3xl border border-purple-500/25 bg-[#0D0720]/85 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] scroll-mt-28"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                   {/* Left: Service Info */}
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-purple-950/70 border border-purple-500/30 flex items-center justify-center text-cyan-300">
+                      <div className="w-12 h-12 rounded-2xl bg-purple-950/70 border border-purple-500/30 flex items-center justify-center text-purple-300">
                         <Icon className="w-6 h-6" />
                       </div>
                       <div>
@@ -102,15 +115,15 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Right: Capabilities + CTA */}
-                  <div className="p-6 rounded-2xl bg-[#060a1d] border border-purple-500/20 space-y-5">
+                  <div className="p-6 rounded-2xl bg-[#080314] border border-purple-500/20 space-y-5">
                     <div>
-                      <h3 className="text-xs text-cyan-400 font-semibold uppercase tracking-wider mb-3">
+                      <h3 className="text-xs text-purple-300 font-semibold uppercase tracking-wider mb-3">
                         Key Deliverables
                       </h3>
                       <div className="space-y-2">
                         {service.features.map((feat, fIdx) => (
                           <div key={fIdx} className="flex items-start gap-2 text-xs text-zinc-300">
-                            <Check className="w-3.5 h-3.5 text-cyan-400 mt-0.5 shrink-0" />
+                            <Check className="w-3.5 h-3.5 text-purple-400 mt-0.5 shrink-0" />
                             <span>{feat}</span>
                           </div>
                         ))}
@@ -120,7 +133,7 @@ export default function ServicesPage() {
                     <div className="pt-2 border-t border-purple-900/30">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-semibold shadow-[0_0_20px_rgba(124,58,237,0.35)] hover:shadow-[0_0_28px_rgba(0,212,255,0.3)] transition-all"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white text-xs font-semibold shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_28px_rgba(192,132,252,0.5)] transition-all"
                       >
                         <span>Get a Quote</span>
                         <ArrowRight className="w-3.5 h-3.5" />

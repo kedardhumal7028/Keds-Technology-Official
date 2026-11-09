@@ -9,13 +9,13 @@ export default function WhatsAppFloating() {
   const prefilledMessage = encodeURIComponent(
     "Hi Keds Technology, I want to discuss a project."
   );
-  const whatsappUrl = `https://wa.me/919999999999?text=${prefilledMessage}`;
+  const whatsappUrl = `https://wa.me/919511273939?text=${prefilledMessage}`;
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3 select-none">
       {/* Tooltip speech bubble */}
       {showTooltip && (
-        <div className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl border border-purple-500/30 bg-[#0B1023]/95 backdrop-blur-xl text-xs text-white shadow-[0_10px_25px_rgba(0,0,0,0.5)] animate-in fade-in slide-in-from-right-4 duration-300">
+        <div className="hidden sm:flex items-center gap-2 px-3.5 py-2 rounded-2xl border border-purple-500/30 bg-[#0D0720]/95 backdrop-blur-xl text-xs text-white shadow-[0_10px_25px_rgba(0,0,0,0.5)] animate-in fade-in slide-in-from-right-4 duration-300">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
           <span>Chat with Senior Architect</span>
           <button

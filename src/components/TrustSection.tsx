@@ -61,7 +61,7 @@ export default function TrustSection() {
               <Link
                 key={client.name}
                 href={client.href}
-                className={`group p-4 sm:p-5 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md transition-all duration-300 ${client.glow}`}
+                className={`group p-4 sm:p-5 rounded-2xl border border-purple-500/20 bg-[#0D0720]/70 backdrop-blur-md transition-all duration-300 ${client.glow}`}
               >
                 <div className="flex items-center justify-between mb-3">
                   <div className="w-9 h-9 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300 group-hover:text-cyan-300 group-hover:border-cyan-400/40 transition-colors">

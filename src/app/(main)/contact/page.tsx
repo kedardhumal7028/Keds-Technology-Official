@@ -4,9 +4,20 @@ import ContactFormSection from "@/components/ContactFormSection";
 import { Sparkles, HelpCircle } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact Us & Project Inquiry | Keds Technology",
+  title: "Contact Us | Hire Keds Technology for Web & App Development",
   description:
-    "Get in touch with Keds Technology's senior engineering team. Request a free architecture assessment or consultation for your software project.",
+    "Get in touch with Keds Technology in Pune, India. Contact us for custom website development, mobile application development, HRMS, and enterprise software consultations. Email: kedstechnology@gmail.com, Phone: +91 95112 73939.",
+  keywords: [
+    "Contact Keds Technology",
+    "Hire Web Developers Pune",
+    "Hire App Developers",
+    "Keds Technology Phone Number",
+    "Keds Technology Email",
+    "Software Development Inquiry",
+  ],
+  alternates: {
+    canonical: "https://kedstechnology.com/contact",
+  },
 };
 
 export default function ContactPage() {
@@ -39,7 +50,7 @@ export default function ContactPage() {
         <div className="mt-20 max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/40 text-xs text-purple-300 font-medium">
-              <HelpCircle className="w-3.5 h-3.5 text-cyan-400" />
+              <HelpCircle className="w-3.5 h-3.5 text-purple-300" />
               <span>Frequently Asked Questions</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
@@ -51,7 +62,7 @@ export default function ContactPage() {
             {faqs.map((faq, idx) => (
               <div
                 key={idx}
-                className="p-6 rounded-2xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md space-y-2"
+                className="p-6 rounded-2xl border border-purple-500/20 bg-[#0D0720]/80 backdrop-blur-md space-y-2"
               >
                 <h3 className="text-base font-bold text-white">
                   {faq.q}

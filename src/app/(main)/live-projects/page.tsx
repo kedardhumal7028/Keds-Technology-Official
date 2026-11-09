@@ -4,9 +4,18 @@ import { projectsData } from "@/data/projects";
 import { Globe, Activity, CheckCircle2, ShieldCheck, ArrowUpRight, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Live Deployed Projects | Keds Technology",
+  title: "Live Deployed Projects | Production Web & App Platforms",
   description:
-    "Explore actively deployed production web applications, portals, and cloud systems engineered by Keds Technology.",
+    "Verify live, active production web applications and portals engineered by Keds Technology serving real users, transactions, and businesses worldwide.",
+  keywords: [
+    "Keds Technology Live Projects",
+    "Live Production Apps",
+    "Web Development Work",
+    "Verified Client Portals",
+  ],
+  alternates: {
+    canonical: "https://kedstechnology.com/live-projects",
+  },
 };
 
 export default function LiveProjectsPage() {
@@ -36,7 +45,7 @@ export default function LiveProjectsPage() {
           {liveProjects.map((project) => (
             <div
               key={project.id}
-              className="p-7 rounded-3xl border border-purple-500/30 bg-[#0B1023]/85 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] flex flex-col justify-between space-y-6"
+              className="p-7 rounded-3xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-xl shadow-[0_15px_40px_rgba(0,0,0,0.5)] flex flex-col justify-between space-y-6"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">

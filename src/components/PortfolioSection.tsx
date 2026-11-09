@@ -56,7 +56,7 @@ export default function PortfolioSection() {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="group relative rounded-3xl border border-purple-500/25 bg-[#0B1023]/85 hover:border-cyan-400/50 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 shadow-[0_15px_40px_rgba(0,0,0,0.6)] flex flex-col justify-between overflow-hidden"
+              className="group relative rounded-3xl border border-purple-500/25 bg-[#0D0720]/85 hover:border-cyan-400/50 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 shadow-[0_15px_40px_rgba(0,0,0,0.6)] flex flex-col justify-between overflow-hidden"
             >
               {/* Floating Browser Mockup Header */}
               <div className="px-4 py-3 bg-[#080d22] border-b border-purple-500/20 flex items-center justify-between">
@@ -65,7 +65,7 @@ export default function PortfolioSection() {
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                 </div>
-                <div className="px-3 py-0.5 rounded-full bg-[#050816] text-[10px] text-zinc-400 truncate max-w-[160px] font-medium">
+                <div className="px-3 py-0.5 rounded-full bg-[#06020E] text-[10px] text-zinc-400 truncate max-w-[160px] font-medium">
                   {project.liveUrl ? project.liveUrl.replace("https://", "") : project.title}
                 </div>
                 <span className="text-[10px] text-emerald-400 flex items-center gap-1 font-medium">

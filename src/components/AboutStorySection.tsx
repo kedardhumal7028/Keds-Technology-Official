@@ -39,7 +39,7 @@ export default function AboutStorySection() {
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-950/40 text-xs text-purple-300 font-medium">
             <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
-            <span>The Keds Standard</span>
+            <span>Our Core Values</span>
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
@@ -58,7 +58,7 @@ export default function AboutStorySection() {
             return (
               <div
                 key={item.title}
-                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0B1023]/70 hover:bg-[#0e1635] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0D0720]/70 hover:bg-[#160B2E] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
               >
                 <div>
                   <div

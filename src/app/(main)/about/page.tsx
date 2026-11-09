@@ -5,9 +5,21 @@ import KedsLogo from "@/components/KedsLogo";
 import { Sparkles, Target, Eye, Gem, Shield, HeartHandshake, Award, ArrowRight, CheckCircle2 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About Us | Keds Technology",
+  title: "About Us | Custom Software & Web Development Company",
   description:
-    "Learn about Keds Technology - Our origin, founding philosophy, architectural discipline, and commitment to building world-class software.",
+    "Learn about Keds Technology - a premier software development and digital transformation company in Pune, India. Discover our mission, engineering philosophy, and commitment to building world-class websites and applications.",
+  keywords: [
+    "About Keds Technology",
+    "Keds Technology",
+    "Keds",
+    "Technology",
+    "Software Company Pune",
+    "IT Engineering Firm",
+    "Web Development Team",
+  ],
+  alternates: {
+    canonical: "https://kedstechnology.com/about",
+  },
 };
 
 export default function AboutPage() {
@@ -54,7 +66,7 @@ export default function AboutPage() {
         </div>
 
         {/* Master Story Box */}
-        <div className="p-8 sm:p-12 rounded-3xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] mb-20">
+        <div className="p-8 sm:p-12 rounded-3xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.6)] mb-20">
           <div className="max-w-4xl mx-auto space-y-6">
             <h2 className="text-2xl sm:text-3xl font-bold text-white">
               The Keds Story: Eliminating Mediocrity in Software
@@ -72,11 +84,11 @@ export default function AboutPage() {
                 <div className="text-xs text-purple-300 mt-1">Fast &amp; Responsive Web &amp; Apps</div>
               </div>
               <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-500/20 text-center">
-                <div className="text-lg sm:text-xl font-bold text-emerald-400">100% Ownership</div>
+                <div className="text-lg sm:text-xl font-bold text-purple-300">100% Ownership</div>
                 <div className="text-xs text-purple-300 mt-1">Full Source Code &amp; IP Handover</div>
               </div>
               <div className="p-4 rounded-2xl bg-purple-950/30 border border-purple-500/20 text-center">
-                <div className="text-lg sm:text-xl font-bold text-cyan-400">Direct Access</div>
+                <div className="text-lg sm:text-xl font-bold text-fuchsia-300">Direct Access</div>
                 <div className="text-xs text-purple-300 mt-1">Direct Technical Collaboration</div>
               </div>
             </div>
@@ -85,7 +97,7 @@ export default function AboutPage() {
 
         {/* Mission & Vision Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
-          <div className="p-8 rounded-3xl border border-purple-500/25 bg-[#0B1023]/80 backdrop-blur-xl space-y-4">
+          <div className="p-8 rounded-3xl border border-purple-500/25 bg-[#0D0720]/80 backdrop-blur-xl space-y-4">
             <div className="w-12 h-12 rounded-2xl bg-purple-950/70 border border-purple-500/30 flex items-center justify-center text-purple-300">
               <Target className="w-6 h-6" />
             </div>
@@ -95,8 +107,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl border border-cyan-500/25 bg-[#0B1023]/80 backdrop-blur-xl space-y-4">
-            <div className="w-12 h-12 rounded-2xl bg-cyan-950/70 border border-cyan-500/30 flex items-center justify-center text-cyan-300">
+          <div className="p-8 rounded-3xl border border-purple-500/25 bg-[#0D0720]/80 backdrop-blur-xl space-y-4">
+            <div className="w-12 h-12 rounded-2xl bg-purple-950/70 border border-purple-500/30 flex items-center justify-center text-fuchsia-300">
               <Eye className="w-6 h-6" />
             </div>
             <h3 className="text-2xl font-bold text-white">Our Vision</h3>
@@ -121,9 +133,9 @@ export default function AboutPage() {
             {milestones.map((m, idx) => (
               <div
                 key={m.year}
-                className="p-6 rounded-3xl border border-purple-500/20 bg-[#0B1023]/70 backdrop-blur-md space-y-3"
+                className="p-6 rounded-3xl border border-purple-500/20 bg-[#0D0720]/80 backdrop-blur-md space-y-3"
               >
-                <div className="text-xs text-cyan-400 font-semibold px-2.5 py-1 rounded-full bg-cyan-950/50 border border-cyan-500/30 w-fit">
+                <div className="text-xs text-purple-300 font-semibold px-2.5 py-1 rounded-full bg-purple-950/60 border border-purple-500/30 w-fit">
                   {m.year}
                 </div>
                 <h3 className="text-base font-bold text-white">{m.title}</h3>
@@ -134,7 +146,7 @@ export default function AboutPage() {
         </div>
 
         {/* CTA Banner */}
-        <div className="p-8 sm:p-10 rounded-3xl border border-purple-500/40 bg-gradient-to-r from-purple-950/40 via-[#0B1023] to-purple-950/40 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="p-8 sm:p-10 rounded-3xl border border-purple-500/40 bg-gradient-to-r from-purple-950/40 via-[#0D0720] to-purple-950/40 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <h3 className="text-2xl font-bold text-white">
               Ready to elevate your digital presence?
@@ -145,7 +157,7 @@ export default function AboutPage() {
           </div>
           <Link
             href="/contact"
-            className="shrink-0 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 text-white font-semibold text-xs sm:text-sm shadow-[0_0_25px_rgba(124,58,237,0.4)] transition-all"
+            className="shrink-0 px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-semibold text-xs sm:text-sm shadow-[0_0_25px_rgba(168,85,247,0.5)] transition-all"
           >
             Start Your Project
           </Link>

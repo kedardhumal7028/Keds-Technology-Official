@@ -21,7 +21,7 @@ const outfit = Outfit({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#050816",
+  themeColor: "#070210",
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
@@ -30,34 +30,53 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://kedstechnology.com"),
   title: {
-    default: "Keds Technology | Innovate • Build • Scale",
+    default: "Keds Technology | Custom Website, Mobile App & Software Development",
     template: "%s | Keds Technology",
   },
   description:
-    "Production-grade digital engineering studio crafting high-velocity web platforms, mobile apps, HRMS, CRM, and ERP systems for global leaders.",
+    "Keds Technology is a leading software engineering company in Pune, India. We engineer custom websites, iOS/Android mobile apps, enterprise HRMS, CRM, and ERP software solutions. Partner with Keds Technology to Innovate, Build, and Scale.",
   keywords: [
     "Keds Technology",
-    "IT Company",
-    "Custom Web Development",
+    "Keds",
+    "Technology",
+    "Keds Tech",
+    "kedstechnology",
+    "kedstechnology.com",
+    "Keds Technology Pune",
+    "Website Development",
+    "Website Development Company",
+    "Web App Development",
+    "Web Development Pune",
     "Mobile App Development",
-    "HRMS Solutions",
-    "Enterprise ERP",
-    "CRM Systems",
-    "Custom Software Architecture",
+    "Mobile App Development Company",
+    "App Development Pune",
+    "iOS App Development",
+    "Android App Development",
+    "Custom Software Development",
+    "Software Development Company",
+    "Software Company Pune",
+    "Best IT Company in Pune",
+    "HRMS Software Development",
+    "Enterprise ERP Development",
+    "CRM System Development",
     "UI/UX Design Studio",
+    "Full Stack Development",
+    "React Nextjs Developers",
     "Pune IT Company",
   ],
   authors: [{ name: "Keds Technology", url: "https://kedstechnology.com" }],
   creator: "Keds Technology",
   publisher: "Keds Technology",
+  category: "technology",
+  classification: "Software & Technology Services",
   formatDetection: {
     email: true,
     telephone: true,
   },
   openGraph: {
-    title: "Keds Technology | Innovate • Build • Scale",
+    title: "Keds Technology | Custom Website, Mobile App & Software Development",
     description:
-      "Production-grade digital engineering studio crafting high-velocity web platforms, mobile apps, HRMS, CRM, and ERP systems.",
+      "Leading software engineering company in Pune, India. Custom websites, iOS/Android mobile apps, HRMS, CRM, and enterprise ERP solutions.",
     url: "https://kedstechnology.com",
     siteName: "Keds Technology",
     images: [
@@ -65,17 +84,17 @@ export const metadata: Metadata = {
         url: "/images/keds-banner.jpeg",
         width: 1200,
         height: 630,
-        alt: "Keds Technology - Innovate • Build • Scale",
+        alt: "Keds Technology - Custom Website, Mobile App & Software Development",
       },
     ],
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Keds Technology | Innovate • Build • Scale",
+    title: "Keds Technology | Custom Website, Mobile App & Software Development",
     description:
-      "Production-grade digital engineering studio crafting high-velocity web platforms, mobile apps, HRMS, CRM, and ERP systems.",
+      "Leading software engineering company in Pune, India. Custom websites, iOS/Android mobile apps, HRMS, CRM, and enterprise ERP solutions.",
     images: ["/images/keds-banner.jpeg"],
   },
   robots: {
@@ -92,6 +111,16 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://kedstechnology.com",
   },
+  icons: {
+    icon: [
+      { url: "/icon.png?v=5", sizes: "any", type: "image/png" },
+      { url: "/favicon.ico?v=5", sizes: "any" },
+    ],
+    apple: [
+      { url: "/apple-icon.png?v=5", sizes: "any", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico?v=5",
+  },
 };
 
 export default function RootLayout({
@@ -103,6 +132,8 @@ export default function RootLayout({
     <html lang="en" className={`${jakarta.variable} ${outfit.variable} dark scroll-smooth`}>
       <head>
         <JsonLd />
+        <link rel="icon" href="/icon.png?v=5" type="image/png" sizes="any" />
+        <link rel="apple-touch-icon" href="/apple-icon.png?v=5" />
       </head>
       <body className="bg-[#000000] text-white min-h-screen selection:bg-purple-600 selection:text-white antialiased flex flex-col justify-between">
         {/* Cinematic Universe Atmosphere & Stardust */}

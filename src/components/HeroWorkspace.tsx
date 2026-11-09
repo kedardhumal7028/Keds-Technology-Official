@@ -43,7 +43,7 @@ export default function HeroWorkspace() {
         className="absolute z-20 w-24 h-24 sm:w-28 sm:h-28 rounded-full flex items-center justify-center transition-transform duration-300"
         style={{
           transform: `translate(${mousePos.x * 12}px, ${mousePos.y * 12}px)`,
-          background: "radial-gradient(circle at 35% 30%, #ffffff 0%, #00d4ff 40%, #7c3aed 80%, #050816 100%)",
+          background: "radial-gradient(circle at 35% 30%, #ffffff 0%, #00d4ff 40%, #7c3aed 80%, #06020E 100%)",
           boxShadow: "0 0 50px rgba(0, 212, 255, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.8)",
         }}
       >
@@ -53,7 +53,7 @@ export default function HeroWorkspace() {
 
       {/* 3. Developer Workspace Terminal (Main Holographic Window) */}
       <div
-        className="relative z-10 w-[92%] sm:w-[86%] rounded-2xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(124,58,237,0.2)] overflow-hidden transition-transform duration-500 ease-out"
+        className="relative z-10 w-[92%] sm:w-[86%] rounded-2xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_30px_rgba(124,58,237,0.2)] overflow-hidden transition-transform duration-500 ease-out"
         style={{
           transform: `rotateY(${mousePos.x * 6}deg) rotateX(${-mousePos.y * 6}deg)`,
         }}
@@ -129,7 +129,7 @@ export default function HeroWorkspace() {
 
       {/* 4. Top-Left Floating Holographic Card: Ath Elite Sports Metrics */}
       <div
-        className="absolute -top-3 -left-3 sm:-left-6 z-30 p-3 sm:p-3.5 rounded-2xl border border-cyan-400/40 bg-[#0B1023]/95 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,212,255,0.2)] animate-float"
+        className="absolute -top-3 -left-3 sm:-left-6 z-30 p-3 sm:p-3.5 rounded-2xl border border-cyan-400/40 bg-[#0D0720]/95 backdrop-blur-xl shadow-[0_10px_25px_rgba(0,212,255,0.2)] animate-float"
         style={{
           transform: `translate(${mousePos.x * -8}px, ${mousePos.y * -8}px)`,
         }}
@@ -150,7 +150,7 @@ export default function HeroWorkspace() {
 
       {/* 5. Bottom-Right Floating Holographic Card: HeartPhysio Tele-Rehab */}
       <div
-        className="absolute -bottom-4 -right-3 sm:-right-6 z-30 p-3 sm:p-3.5 rounded-2xl border border-purple-500/40 bg-[#0B1023]/95 backdrop-blur-xl shadow-[0_10px_25px_rgba(124,58,237,0.3)] animate-float"
+        className="absolute -bottom-4 -right-3 sm:-right-6 z-30 p-3 sm:p-3.5 rounded-2xl border border-purple-500/40 bg-[#0D0720]/95 backdrop-blur-xl shadow-[0_10px_25px_rgba(124,58,237,0.3)] animate-float"
         style={{
           animationDelay: "2s",
           transform: `translate(${mousePos.x * 10}px, ${mousePos.y * 10}px)`,

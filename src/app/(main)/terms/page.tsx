@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "Terms of Service | Keds Technology",
   description:
     "Terms of Service governing engineering contracts, project delivery, and digital consulting at Keds Technology.",
+  alternates: {
+    canonical: "https://kedstechnology.com/terms",
+  },
 };
 
 export default function TermsOfServicePage() {
@@ -21,7 +24,7 @@ export default function TermsOfServicePage() {
           <span>Back to Home</span>
         </Link>
 
-        <div className="p-8 sm:p-12 rounded-3xl border border-purple-500/25 bg-[#0B1023]/80 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-8">
+        <div className="p-8 sm:p-12 rounded-3xl border border-purple-500/25 bg-[#0D0720]/90 backdrop-blur-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] space-y-8">
           <div className="border-b border-purple-900/30 pb-6">
             <div className="flex items-center gap-2 mb-2">
               <FileText className="w-5 h-5 text-cyan-400" />

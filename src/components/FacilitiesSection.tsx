@@ -51,7 +51,7 @@ export default function FacilitiesSection() {
             return (
               <div
                 key={facility.id}
-                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0B1023]/80 hover:bg-[#0e1635] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0D0720]/80 hover:bg-[#160B2E] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between"
               >
                 <div>
                   {/* Top Icon Badge */}

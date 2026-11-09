@@ -51,7 +51,7 @@ export default function TestimonialsSection() {
         <div
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          className="relative max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+          className="relative max-w-4xl mx-auto p-8 sm:p-12 rounded-3xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-2xl shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
         >
           {/* Top Row: Quote Icon & Star Ratings */}
           <div className="flex items-center justify-between mb-8">

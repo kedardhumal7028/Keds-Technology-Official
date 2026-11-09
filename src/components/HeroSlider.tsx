@@ -197,7 +197,7 @@ export default function HeroSlider() {
                   className={`flex items-center gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 cursor-pointer whitespace-nowrap ${
                     isActive
                       ? "bg-purple-900/60 border border-purple-400/50 text-white shadow-[0_0_20px_rgba(124,58,237,0.35)]"
-                      : "bg-[#0b1023]/60 border border-white/[0.08] text-zinc-400 hover:text-zinc-200 hover:bg-[#121833]"
+                      : "bg-[#0D0720]/60 border border-white/[0.08] text-zinc-400 hover:text-zinc-200 hover:bg-[#121833]"
                   }`}
                 >
                   <TabIcon

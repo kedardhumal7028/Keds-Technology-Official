@@ -63,7 +63,7 @@ export default function DesignServicesSection() {
             </p>
 
             {/* Custom Interactive Design Canvas Illustration */}
-            <div className="relative p-6 rounded-3xl border border-purple-500/30 bg-[#0B1023]/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] space-y-4">
+            <div className="relative p-6 rounded-3xl border border-purple-500/30 bg-[#0D0720]/90 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.6)] space-y-4">
               <div className="flex items-center justify-between text-xs text-zinc-400 border-b border-purple-500/20 pb-3">
                 <span className="font-mono text-purple-300">keds-design-system.fig</span>
                 <span className="text-emerald-400 font-mono flex items-center gap-1">
@@ -74,13 +74,13 @@ export default function DesignServicesSection() {
 
               {/* Design Token Preview */}
               <div className="grid grid-cols-4 gap-2">
-                <div className="p-2.5 rounded-xl bg-[#050816] border border-purple-500/30 text-center">
-                  <div className="w-full h-6 rounded bg-[#050816] border border-zinc-700 mb-1" />
-                  <span className="text-[10px] font-mono text-zinc-400">#050816</span>
+                <div className="p-2.5 rounded-xl bg-[#06020E] border border-purple-500/30 text-center">
+                  <div className="w-full h-6 rounded bg-[#06020E] border border-zinc-700 mb-1" />
+                  <span className="text-[10px] font-mono text-zinc-400">#06020E</span>
                 </div>
-                <div className="p-2.5 rounded-xl bg-[#0B1023] border border-purple-500/30 text-center">
-                  <div className="w-full h-6 rounded bg-[#0B1023] mb-1" />
-                  <span className="text-[10px] font-mono text-zinc-400">#0B1023</span>
+                <div className="p-2.5 rounded-xl bg-[#0D0720] border border-purple-500/30 text-center">
+                  <div className="w-full h-6 rounded bg-[#0D0720] mb-1" />
+                  <span className="text-[10px] font-mono text-zinc-400">#0D0720</span>
                 </div>
                 <div className="p-2.5 rounded-xl bg-purple-900/40 border border-purple-500/30 text-center">
                   <div className="w-full h-6 rounded bg-[#7C3AED] mb-1 shadow-[0_0_10px_#7C3AED]" />
@@ -106,7 +106,7 @@ export default function DesignServicesSection() {
               return (
                 <div
                   key={item.title}
-                  className="p-5 sm:p-6 rounded-2xl border border-purple-500/20 bg-[#0B1023]/80 hover:bg-[#0e1635] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 shadow-[0_10px_25px_rgba(0,0,0,0.3)]"
+                  className="p-5 sm:p-6 rounded-2xl border border-purple-500/20 bg-[#0D0720]/80 hover:bg-[#160B2E] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 shadow-[0_10px_25px_rgba(0,0,0,0.3)]"
                 >
                   <div className="flex items-center justify-between mb-3">
                     <div className="w-9 h-9 rounded-xl bg-purple-950/60 border border-purple-500/30 flex items-center justify-center text-purple-300">

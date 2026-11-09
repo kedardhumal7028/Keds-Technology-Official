@@ -63,8 +63,8 @@ export default function ConsultationModal({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#050816]/85 backdrop-blur-xl animate-in fade-in duration-300">
-      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto p-6 sm:p-8 rounded-3xl border border-purple-500/30 bg-[#0B1023]/95 shadow-[0_0_60px_rgba(124,58,237,0.35)] text-white">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#06020E]/90 backdrop-blur-xl animate-in fade-in duration-300">
+      <div className="relative w-full max-w-xl max-h-[92vh] overflow-y-auto p-6 sm:p-8 rounded-3xl border border-purple-500/30 bg-[#0D0720]/95 shadow-[0_0_60px_rgba(168,85,247,0.35)] text-white">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -77,7 +77,7 @@ export default function ConsultationModal({
         {!submitted ? (
           <div>
             <div className="flex items-center gap-2 px-3 py-1 rounded-full border border-purple-500/30 bg-purple-900/30 text-xs text-purple-300 font-medium tracking-wide w-fit mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+              <Sparkles className="w-3.5 h-3.5 text-purple-300" />
               <span>Free Consultation</span>
             </div>
 
@@ -153,7 +153,7 @@ export default function ConsultationModal({
                 <select
                   value={formData.service}
                   onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                  className="w-full px-4 py-2.5 rounded-xl bg-[#0e152e] border border-purple-500/30 text-white focus:outline-none focus:border-cyan-400 text-sm transition-all"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#080314] border border-purple-500/30 text-white focus:outline-none focus:border-purple-400 text-sm transition-all"
                 >
                   <option value="Website Development">Website Development</option>
                   <option value="Mobile App Development">Mobile App Development</option>
@@ -176,7 +176,7 @@ export default function ConsultationModal({
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us what you want to build or your primary goals..."
-                  className="w-full px-4 py-2.5 rounded-xl bg-purple-950/20 border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-400 text-sm transition-all resize-none"
+                  className="w-full px-4 py-2.5 rounded-xl bg-[#080314] border border-purple-500/30 text-white placeholder-zinc-500 focus:outline-none focus:border-purple-400 text-sm transition-all resize-none"
                 />
               </div>
 
@@ -190,7 +190,7 @@ export default function ConsultationModal({
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-medium text-sm shadow-[0_0_25px_rgba(124,58,237,0.5)] hover:shadow-[0_0_35px_rgba(0,212,255,0.5)] transition-all flex items-center justify-center gap-2 group cursor-pointer active:scale-98 disabled:opacity-70"
+                  className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-medium text-sm shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(192,132,252,0.6)] transition-all flex items-center justify-center gap-2 group cursor-pointer active:scale-98 disabled:opacity-70"
                 >
                   {submitting ? (
                     <span>Submitting Request...</span>

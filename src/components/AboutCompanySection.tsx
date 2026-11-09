@@ -8,7 +8,6 @@ import {
   Eye,
   ShieldCheck,
   Zap,
-  CheckCircle2,
   Users2,
   Award,
   ArrowRight,
@@ -68,8 +67,8 @@ export default function AboutCompanySection() {
 
           {/* Left: Who We Are & Mission */}
           <div className="lg:col-span-6 space-y-6">
-            <div className="p-6 sm:p-8 rounded-3xl border border-purple-500/25 bg-[#0B1023]/70 backdrop-blur-xl shadow-lg space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-400/30 text-xs font-medium text-cyan-300">
+            <div className="p-6 sm:p-8 rounded-3xl border border-purple-500/25 bg-[#0D0720]/80 backdrop-blur-xl shadow-lg space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-400/40 text-xs font-medium text-purple-300">
                 <span>Our Mission</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -80,8 +79,8 @@ export default function AboutCompanySection() {
               </p>
             </div>
 
-            <div className="p-6 sm:p-8 rounded-3xl border border-purple-500/25 bg-[#0B1023]/70 backdrop-blur-xl shadow-lg space-y-4">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/50 border border-purple-400/30 text-xs font-medium text-purple-300">
+            <div className="p-6 sm:p-8 rounded-3xl border border-purple-500/25 bg-[#0D0720]/80 backdrop-blur-xl shadow-lg space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-950/60 border border-purple-400/40 text-xs font-medium text-purple-300">
                 <span>Our Philosophy</span>
               </div>
               <h3 className="text-xl sm:text-2xl font-bold text-white">
@@ -95,7 +94,7 @@ export default function AboutCompanySection() {
 
           {/* Right: Key Milestones & Capabilities Card */}
           <div className="lg:col-span-6">
-            <div className="p-7 sm:p-9 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-[#0B1023]/90 via-[#070b1a]/95 to-[#040612] backdrop-blur-2xl shadow-2xl space-y-6">
+            <div className="p-7 sm:p-9 rounded-3xl border border-purple-500/30 bg-gradient-to-br from-[#0D0720]/95 via-[#0A0418]/95 to-[#06020E] backdrop-blur-2xl shadow-2xl space-y-6">
               <h3 className="text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
                 <span>Why Partner With Keds?</span>
               </h3>
@@ -144,8 +143,7 @@ export default function AboutCompanySection() {
                 </div>
               </div>
 
-              <div className="pt-2 flex items-center justify-between text-xs text-zinc-400 border-t border-purple-900/40">
-                <span>📍 Pune, Maharashtra, India</span>
+              <div className="pt-2 flex items-center justify-end text-xs text-zinc-400 border-t border-purple-900/40">
                 <Link
                   href="/about"
                   className="text-cyan-400 hover:text-cyan-300 font-medium flex items-center gap-1 transition-colors"
@@ -166,7 +164,7 @@ export default function AboutCompanySection() {
             return (
               <div
                 key={item.title}
-                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0B1023]/70 hover:bg-[#0e1635] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                className="group p-6 sm:p-7 rounded-3xl border border-purple-500/20 bg-[#0D0720]/80 hover:bg-[#160B2E] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
               >
                 <div>
                   <div
@@ -187,11 +185,6 @@ export default function AboutCompanySection() {
                   <p className="text-xs sm:text-sm text-zinc-400 mt-2 leading-relaxed font-light">
                     {item.desc}
                   </p>
-                </div>
-
-                <div className="mt-5 pt-3 border-t border-purple-900/30 flex items-center gap-1.5 text-[11px] font-medium text-purple-300">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>The Keds Standard</span>
                 </div>
               </div>
             );

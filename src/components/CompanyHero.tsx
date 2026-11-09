@@ -120,7 +120,7 @@ export default function CompanyHero() {
 
               <a
                 href="#expertise"
-                className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-purple-500/30 hover:border-purple-400 bg-[#0B1023]/80 hover:bg-[#121833] text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold backdrop-blur-md transition-all duration-300 flex items-center gap-2 cursor-pointer"
+                className="px-6 sm:px-7 py-3 sm:py-3.5 rounded-full border border-purple-500/30 hover:border-purple-400 bg-[#0D0720]/80 hover:bg-[#121833] text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold backdrop-blur-md transition-all duration-300 flex items-center gap-2 cursor-pointer"
               >
                 <span>Our Expertise</span>
                 <span className="text-purple-400">↓</span>

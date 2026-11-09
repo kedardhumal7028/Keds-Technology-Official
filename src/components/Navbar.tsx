@@ -51,7 +51,7 @@ export default function Navbar() {
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
             ? "bg-[#000000]/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
-            : "bg-[#050816]/75 backdrop-blur-md border-b border-white/10 py-4 shadow-[0_4px_20px_rgba(0,0,0,0.3)]"
+            : "bg-[#070210]/85 backdrop-blur-md border-b border-purple-500/20 py-4 shadow-[0_4px_20px_rgba(124,58,237,0.15)]"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -89,7 +89,7 @@ export default function Navbar() {
                         }`}
                       />
                       {/* Purple underline slide */}
-                      <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-purple-500 to-cyan-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
+                      <span className="absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
                     </button>
 
                     {/* Dropdown Menu */}
@@ -100,7 +100,7 @@ export default function Navbar() {
                           : "opacity-0 invisible -translate-y-2 pointer-events-none"
                       }`}
                     >
-                      <div className="p-2 rounded-2xl border border-purple-500/25 bg-[#0B1023]/95 backdrop-blur-2xl shadow-[0_15px_40px_rgba(0,0,0,0.6)] space-y-1">
+                      <div className="p-2 rounded-2xl border border-purple-500/25 bg-[#0D0720]/95 backdrop-blur-2xl shadow-[0_15px_40px_rgba(124,58,237,0.25)] space-y-1">
                         {link.children?.map((child) => (
                           <Link
                             key={child.name}
@@ -139,7 +139,7 @@ export default function Navbar() {
                   <span>{link.name}</span>
                   {/* Purple underline slide hover animation */}
                   <span
-                    className={`absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-purple-500 to-cyan-400 transition-transform duration-300 origin-left ${
+                    className={`absolute bottom-0 left-3 right-3 h-[2px] bg-gradient-to-r from-purple-500 via-fuchsia-500 to-purple-400 transition-transform duration-300 origin-left ${
                       isActive ? "scale-x-100" : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
@@ -152,9 +152,9 @@ export default function Navbar() {
           <div className="hidden sm:flex items-center gap-3">
             <button
               onClick={() => setIsConsultationOpen(true)}
-              className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 border border-purple-400/40 shadow-[0_0_20px_rgba(124,58,237,0.35)] hover:shadow-[0_0_30px_rgba(0,212,255,0.45)] transition-all duration-300 cursor-pointer active:scale-95 group"
+              className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 border border-purple-400/40 shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(192,132,252,0.6)] transition-all duration-300 cursor-pointer active:scale-95 group"
             >
-              <Sparkles className="w-3.5 h-3.5 text-cyan-300 animate-pulse" />
+              <Sparkles className="w-3.5 h-3.5 text-purple-200 animate-pulse" />
               <span>Get Free Consultation</span>
               <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </button>
@@ -180,7 +180,7 @@ export default function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden px-4 pt-3 pb-6 bg-[#000000]/95 backdrop-blur-2xl border-b border-white/[0.08] animate-in slide-in-from-top-4 duration-300">
+          <div className="lg:hidden px-4 pt-3 pb-6 max-h-[85vh] overflow-y-auto bg-[#000000]/95 backdrop-blur-2xl border-b border-white/[0.08] animate-in slide-in-from-top-4 duration-300">
             <div className="space-y-1.5">
               <Link
                 href="/"

@@ -93,54 +93,54 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative flex h-[100dvh] max-h-[100dvh] w-full items-center overflow-hidden border-b border-purple-900/30 bg-[#000000] text-white pt-16 sm:pt-20 pb-4">
+    <section className="relative flex min-h-[100dvh] w-full items-center overflow-hidden border-b border-purple-900/30 bg-[#000000] text-white pt-28 pb-12 sm:pt-32 sm:pb-16 lg:pt-36 lg:pb-16">
       {/* Background Soft Purple Aurora Glow */}
       <div
-        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] sm:w-[900px] lg:w-[1200px] h-[350px] sm:h-[480px] pointer-events-none opacity-35 blur-[140px]"
+        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] md:w-[900px] lg:w-[1200px] h-[300px] sm:h-[480px] pointer-events-none opacity-35 blur-[100px] sm:blur-[140px]"
         style={{
           background:
             "radial-gradient(ellipse at center, rgba(124, 58, 237, 0.45) 0%, rgba(99, 102, 241, 0.25) 45%, transparent 75%)",
         }}
       />
 
-      {/* FIXED LEFT CONTENT (Fitted directly to screen height) */}
-      <div className="relative z-10 w-full max-w-[560px] lg:max-w-[580px] px-5 sm:px-8 md:px-12 lg:ml-8 xl:ml-16 my-auto">
+      {/* FIXED LEFT CONTENT */}
+      <div className="relative z-10 w-full max-w-[580px] lg:max-w-[620px] px-4 sm:px-6 md:px-8 lg:pl-8 xl:pl-12 lg:pr-4 my-auto">
 
         {/* Top Minimalist Pill Badge */}
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium tracking-wide mb-3 border border-purple-500/30 bg-purple-950/40 text-purple-200 shadow-[0_0_20px_rgba(124,58,237,0.25)]">
-          <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse shadow-[0_0_8px_#00d4ff]" />
-          <span className="font-semibold">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-medium tracking-wide mb-4 border border-purple-500/40 bg-purple-950/60 text-purple-200 shadow-[0_0_20px_rgba(124,58,237,0.3)] backdrop-blur-sm">
+          <span className="w-2 h-2 rounded-full bg-purple-400 animate-pulse shadow-[0_0_8px_#a855f7] shrink-0" />
+          <span className="font-semibold text-white">
             Keds Technology • IT &amp; Digital Solutions
           </span>
         </div>
 
         {/* Grand IT Headline */}
-        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.02] tracking-[-1.5px] text-white">
+        <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.25rem] leading-[1.08] sm:leading-[1.05] tracking-tight text-white">
           Innovate.{" "}
           <span className="text-gradient-purple font-serif">Build.</span>{" "}
-          <span className="text-gradient-cyan font-serif">Scale.</span>
+          <span className="text-gradient-purple font-serif">Scale.</span>
         </h1>
 
         {/* IT Company Value Proposition Paragraph */}
-        <p className="mt-3 max-w-[440px] text-xs sm:text-sm md:text-base leading-relaxed font-light text-zinc-300">
-          We engineer modern web applications, mobile apps, and custom software systems designed to scale your business.
+        <p className="mt-4 sm:mt-5 max-w-[500px] text-xs sm:text-sm md:text-base leading-relaxed font-light text-zinc-300">
+          We are <strong className="text-white font-medium">Keds Technology</strong> — a software engineering company specializing in high-performance website development, mobile apps, and custom software systems designed to scale your business.
         </p>
 
         {/* Call to Action Buttons */}
-        <div className="mt-5 flex flex-wrap items-center gap-3">
+        <div className="mt-6 sm:mt-7 flex flex-col xs:flex-row items-stretch xs:items-center gap-3">
           <button
             type="button"
             onClick={() => setIsConsultationOpen(true)}
-            className="px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-700 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-semibold text-xs sm:text-sm shadow-[0_0_25px_rgba(124,58,237,0.5)] hover:shadow-[0_0_35px_rgba(0,212,255,0.5)] transition-all duration-300 flex items-center gap-2 cursor-pointer active:scale-95 group"
+            className="px-6 sm:px-7 py-3 rounded-full bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 text-white font-semibold text-xs sm:text-sm shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(192,132,252,0.6)] transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer active:scale-95 group"
           >
-            <Sparkles className="w-3.5 h-3.5 text-cyan-300" />
+            <Sparkles className="w-3.5 h-3.5 text-purple-200" />
             <span>Start Your Project</span>
             <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
           </button>
 
           <a
             href="#expertise"
-            className="px-5 sm:px-6 py-3 rounded-full border border-purple-500/30 hover:border-purple-400 bg-purple-950/20 hover:bg-purple-900/30 text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-1.5 cursor-pointer"
+            className="px-5 sm:px-6 py-3 rounded-full border border-purple-500/30 hover:border-purple-400 bg-purple-950/20 hover:bg-purple-900/30 text-zinc-200 hover:text-white text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center justify-center gap-1.5 cursor-pointer text-center"
           >
             <span>Our Services</span>
             <span className="text-purple-400">↓</span>
@@ -148,26 +148,26 @@ export default function HeroSection() {
         </div>
 
         {/* Value Highlights */}
-        <div className="mt-6 pt-3.5 border-t border-purple-900/30 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg">
+        <div className="mt-7 sm:mt-8 pt-4 sm:pt-5 border-t border-purple-900/30 grid grid-cols-3 gap-2 sm:gap-4 max-w-lg">
           <div className="flex flex-col">
             <span className="text-base sm:text-xl font-extrabold text-white">3+</span>
             <span className="text-[10px] sm:text-xs text-zinc-400 mt-0.5">Projects Delivered</span>
           </div>
-          <div className="flex flex-col border-l border-purple-900/30 pl-3 sm:pl-4">
-            <span className="text-base sm:text-xl font-extrabold text-emerald-400">100%</span>
+          <div className="flex flex-col border-l border-purple-900/30 pl-2.5 sm:pl-4">
+            <span className="text-base sm:text-xl font-extrabold text-purple-300">100%</span>
             <span className="text-[10px] sm:text-xs text-zinc-400 mt-0.5">Code Ownership</span>
           </div>
-          <div className="flex flex-col border-l border-purple-900/30 pl-3 sm:pl-4">
-            <span className="text-base sm:text-xl font-extrabold text-cyan-400">Direct</span>
-            <span className="text-[10px] sm:text-xs text-zinc-400 mt-0.5">Engineering Support</span>
+          <div className="flex flex-col border-l border-purple-900/30 pl-2.5 sm:pl-4">
+            <span className="text-base sm:text-xl font-extrabold text-violet-300">Direct</span>
+            <span className="text-[10px] sm:text-xs text-zinc-400 mt-0.5">Pune, India</span>
           </div>
         </div>
 
       </div>
 
       {/* DIAGONAL CARD ANIMATION */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[48%] sm:left-[55%] md:left-[58%] lg:left-[64%] top-[-50%] w-[900px] h-[200%] origin-center -rotate-[30deg] will-change-transform">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-25 sm:opacity-40 lg:opacity-100">
+        <div className="absolute left-[55%] sm:left-[58%] md:left-[62%] lg:left-[64%] top-[-50%] w-[900px] h-[200%] origin-center -rotate-[30deg] will-change-transform">
           <div
             ref={trackRef}
             className="flex flex-col will-change-transform"

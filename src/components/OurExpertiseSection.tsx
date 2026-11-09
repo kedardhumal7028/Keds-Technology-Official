@@ -114,11 +114,11 @@ export default function OurExpertiseSection() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight">
-            Our <span className="text-gradient-purple">Expertise & Services</span>
+            Our <span className="text-gradient-purple">Expertise &amp; Services</span>
           </h2>
 
           <p className="text-sm sm:text-base md:text-lg text-zinc-300 font-light leading-relaxed">
-            From modern consumer web and mobile applications to mission-critical enterprise backbones — explore the high-velocity solutions we engineer.
+            From custom website development and mobile apps to enterprise HRMS, CRM, and ERP systems — explore the full spectrum of software solutions engineered by Keds Technology.
           </p>
         </div>
 
@@ -130,32 +130,33 @@ export default function OurExpertiseSection() {
             return (
               <div
                 key={service.id}
-                className="group relative p-6 sm:p-7 rounded-3xl border border-purple-500/25 bg-[#0B1023]/75 hover:bg-[#0e1635] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                className="group relative p-6 sm:p-7 rounded-3xl border border-purple-500/25 bg-[#0D0720]/80 hover:bg-[#160B2E] hover:border-purple-400/50 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1.5 shadow-[0_15px_35px_rgba(0,0,0,0.5)] flex flex-col justify-between"
               >
                 <div>
-                  {/* Top Bar: Icon & Badge */}
-                  <div className="flex items-center justify-between mb-4">
+                  {/* Top Bar: Icon & Title in Single Horizontal Line */}
+                  <div className="flex items-center gap-3.5 mb-3.5 min-h-[54px]">
                     <div
-                      className="w-12 h-12 rounded-2xl flex items-center justify-center transition-transform group-hover:scale-110 shadow-lg"
+                      className="w-11 h-11 sm:w-12 sm:h-12 rounded-2xl flex items-center justify-center shrink-0 transition-transform group-hover:scale-110 shadow-lg"
                       style={{
                         background: `${service.accentColor}20`,
                         border: `1px solid ${service.accentColor}50`,
                         color: service.accentColor,
                       }}
                     >
-                      <Icon className="w-6 h-6" />
+                      <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </div>
-                    <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-purple-950/60 border border-purple-500/30 text-purple-300">
-                      {service.badge}
-                    </span>
+                    <div className="min-w-0 flex-1">
+                      <span className="text-[10px] font-semibold text-purple-400 uppercase tracking-wider block mb-0.5">
+                        {service.badge}
+                      </span>
+                      <h3 className="text-base sm:text-lg font-bold text-white group-hover:text-purple-200 transition-colors leading-tight">
+                        {service.title}
+                      </h3>
+                    </div>
                   </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-purple-200 transition-colors">
-                    {service.title}
-                  </h3>
-
-                  <p className="text-xs sm:text-sm text-zinc-400 mt-2.5 leading-relaxed font-light">
+                  {/* Description / Subtitle with uniform height so all cards align perfectly */}
+                  <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed font-light min-h-[64px] sm:min-h-[70px]">
                     {service.desc}
                   </p>
 
@@ -188,7 +189,7 @@ export default function OurExpertiseSection() {
         </div>
 
         {/* Global CTA Banner at bottom of Services */}
-        <div className="mt-14 p-6 sm:p-8 rounded-3xl border border-purple-500/30 bg-gradient-to-r from-purple-950/60 via-[#0B1023]/80 to-purple-950/60 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+        <div className="mt-14 p-6 sm:p-8 rounded-3xl border border-purple-500/30 bg-gradient-to-r from-purple-950/60 via-[#0D0720]/90 to-purple-950/60 backdrop-blur-xl flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
           <div>
             <h4 className="text-lg sm:text-xl font-bold text-white">
               Need a Custom Solution Tailored to Your Business?

@@ -31,8 +31,14 @@ export default function KedsLogo({
           alt="Keds Technology - Official Logo"
           fill
           priority
-          sizes="(max-width: 768px) 240px, 740px"
-          className="object-contain drop-shadow-[0_0_25px_rgba(168,85,247,0.45)] group-hover:drop-shadow-[0_0_35px_rgba(0,212,255,0.6)] transition-all duration-300"
+          sizes={
+            size === "small"
+              ? "(max-width: 640px) 130px, 160px"
+              : size === "large"
+              ? "(max-width: 640px) 280px, 740px"
+              : "(max-width: 640px) 180px, 240px"
+          }
+          className="object-contain drop-shadow-[0_0_10px_rgba(168,85,247,0.35)] group-hover:drop-shadow-[0_0_16px_rgba(0,212,255,0.5)] transition-all duration-300"
         />
       </div>
 

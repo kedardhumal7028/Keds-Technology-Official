@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import NeonAtmosphere from "@/components/NeonAtmosphere";
-import ParticleCanvas from "@/components/ParticleCanvas";
 import WhatsAppFloating from "@/components/WhatsAppFloating";
 import JsonLd from "@/components/JsonLd";
 
@@ -138,7 +137,6 @@ export default function RootLayout({
       <body className="bg-[#000000] text-white min-h-screen selection:bg-purple-600 selection:text-white antialiased flex flex-col justify-between">
         {/* Cinematic Universe Atmosphere & Stardust */}
         <NeonAtmosphere />
-        <ParticleCanvas />
 
         {/* Sticky Glass Navigation */}
         <Navbar />

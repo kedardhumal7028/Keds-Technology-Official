@@ -60,7 +60,13 @@ export default function PortfolioGallery() {
               </div>
 
               <div className="flex items-center gap-3">
-                <span className="px-3 py-1 rounded-full text-xs font-medium bg-emerald-950/60 border border-emerald-500/40 text-emerald-300">
+                <span
+                  className={`px-3 py-1 rounded-full text-xs font-medium border ${
+                    project.status === "Live"
+                      ? "bg-emerald-950/60 border-emerald-500/40 text-emerald-300"
+                      : "bg-amber-950/60 border-amber-500/40 text-amber-300"
+                  }`}
+                >
                   ● {project.status}
                 </span>
                 {project.liveUrl && (
@@ -71,7 +77,11 @@ export default function PortfolioGallery() {
                     className="px-4 py-2 rounded-xl bg-purple-950/60 border border-purple-400/40 text-purple-200 hover:bg-purple-900/60 text-xs font-semibold flex items-center gap-1.5 transition-all shadow-[0_0_15px_rgba(168,85,247,0.3)]"
                   >
                     <Globe className="w-3.5 h-3.5" />
-                    <span>Visit Live Platform</span>
+                    <span>
+                      {project.status === "Live"
+                        ? "Visit Live Website"
+                        : "Open Staging Preview"}
+                    </span>
                   </a>
                 )}
               </div>

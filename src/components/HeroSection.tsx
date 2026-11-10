@@ -1,21 +1,21 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import gsap from "gsap";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
 import { Sparkles, ArrowRight } from "lucide-react";
 import { evaluateFestivalWindow, ActiveFestivalResult, FESTIVAL_GREETINGS_MAP } from "@/features/festival-preview/festivalCalendarEngine";
-import { FireworksCanvas } from "@/features/festival-preview/FireworksCanvas";
-import { FestivalAnimationCanvas } from "@/features/festival-preview/FestivalAnimationCanvas";
 import { FestivalId, FESTIVALS_MAP, getActiveConcept, FESTIVAL_ICONS } from "@/features/festival-preview/festivalData";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), {
+  ssr: false,
+});
 
 interface HeroSectionProps {
   overrideFestivalId?: FestivalId;
 }
 
 export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
-  const trackRef = useRef<HTMLDivElement>(null);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [activeFestival, setActiveFestival] = useState<ActiveFestivalResult | null>(null);
 
@@ -50,113 +50,64 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
   const concept = getActiveConcept(festConfig, "2026");
   const icon = FESTIVAL_ICONS[currentFestId] || "✨";
 
-
-
-  useEffect(() => {
-    const track = trackRef.current;
-    if (!track) return;
-
-    const ctx = gsap.context(() => {
-      // The track contains two identical groups, so one full translation
-      // lands on the exact starting frame before GSAP repeats.
-      gsap.fromTo(
-        track,
-        { yPercent: 0 },
-        {
-          yPercent: -50,
-          duration: 100,
-          ease: "none",
-          repeat: -1,
-
-        }
-      );
-    }, track);
-
-    return () => ctx.revert();
-  }, []);
-
   const heroCards = [
     {
       id: 1,
-      image: "/images/hero/hero-ai-1.jpg",
+      image: "/images/hero/hero-ai-1.webp",
       title: "Enterprise Web Applications",
       tag: "Web Platforms",
       color: "#bd82b0",
     },
     {
       id: 2,
-      image: "/images/hero/hero-ai-2.jpg",
+      image: "/images/hero/hero-ai-2.webp",
       title: "Intelligent AI Automation",
       tag: "AI Solutions",
       color: "#00d4ff",
     },
     {
       id: 3,
-      image: "/images/hero/hero-ai-3.jpg",
+      image: "/images/hero/hero-ai-3.webp",
       title: "Custom Mobile Applications",
       tag: "Mobile Apps",
       color: "#a855f7",
     },
     {
       id: 4,
-      image: "/images/hero/hero-ai-4.jpg",
+      image: "/images/hero/hero-ai-4.webp",
       title: "Cloud & ERP Infrastructure",
       tag: "Enterprise Systems",
       color: "#10b981",
     },
     {
       id: 5,
-      image: "/images/hero/hero-ai-5.jpg",
+      image: "/images/hero/hero-ai-5.webp",
       title: "Custom Software Solutions",
       tag: "Product Engineering",
       color: "#f59e0b",
     },
     {
       id: 6,
-      image: "/images/hero/hero-ai-6.jpg",
+      image: "/images/hero/hero-ai-6.webp",
       title: "Data Security & Governance",
       tag: "Cyber Security",
       color: "#ec4899",
-    },
-    {
-      id: 7,
-      image: "/images/hero/hero-ai-1.jpg",
-      title: "Business Intelligence & Analytics",
-      tag: "Data Solutions",
-      color: "#06b6d4",
-    },
-    {
-      id: 8,
-      image: "/images/hero/hero-ai-3.jpg",
-      title: "Digital Commerce & Portals",
-      tag: "Digital Solutions",
-      color: "#8b5cf6",
     },
   ];
 
   const isPreview = Boolean(overrideFestivalId);
 
   return (
-    <section className={`relative flex flex-col justify-center min-h-[92vh] sm:min-h-screen w-full overflow-hidden border-b border-purple-900/30 bg-[#000000] text-white ${
-      isPreview ? "pt-8 sm:pt-10" : "pt-24 sm:pt-28 lg:pt-28"
-    } pb-10 sm:pb-14`}>
-      {/* Real Festive Fireworks Bursting Canvas during Diwali */}
-      {isFestive && currentFestId === "diwali" && (
-        <FireworksCanvas />
-      )}
-
-      {/* Dynamic Festival Particles (Gulal for Holi, Marigold petals for Ganesh Chaturthi, Kites for Makar Sankranti, etc.) */}
-      {isFestive && currentFestId !== "diwali" && (
-        <FestivalAnimationCanvas festivalId={currentFestId} year="2026" />
-      )}
-
-      {/* Background Aurora Glow - Harmonizes with the active festival's color palette */}
+    <section className={`relative flex flex-col justify-center min-h-[92vh] sm:min-h-screen w-full overflow-hidden border-b border-purple-900/30 bg-[#000000] text-white ${isPreview ? "pt-8 sm:pt-10" : "pt-24 sm:pt-28 lg:pt-28"
+      } pb-10 sm:pb-14`}>
+      {/* Background Aurora Glow - Harmonizes with the active festival's color palette (High Performance) */}
       <div
-        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] md:w-[900px] lg:w-[1200px] h-[300px] sm:h-[480px] pointer-events-none opacity-40 blur-[100px] sm:blur-[140px] transition-all duration-700"
+        className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[350px] sm:w-[600px] md:w-[900px] lg:w-[1100px] h-[300px] sm:h-[480px] pointer-events-none opacity-35 transition-all duration-700"
         style={{
           background: isFestive
-            ? `radial-gradient(ellipse at center, ${concept.primaryColor}66 0%, ${concept.secondaryColor}40 45%, transparent 75%)`
-            : "radial-gradient(ellipse at center, rgba(124, 58, 237, 0.45) 0%, rgba(99, 102, 241, 0.25) 45%, transparent 75%)",
+            ? `radial-gradient(ellipse at center, ${concept.primaryColor}55 0%, ${concept.secondaryColor}25 40%, transparent 75%)`
+            : "radial-gradient(ellipse at center, rgba(124, 58, 237, 0.35) 0%, rgba(99, 102, 241, 0.18) 40%, transparent 75%)",
+          transform: "translate3d(0, 0, 0)",
         }}
       />
 
@@ -173,13 +124,13 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
               boxShadow: `0 0 25px ${concept.buttonShadow}`,
             }}
           >
-            <span className="text-base sm:text-lg animate-bounce">{icon}</span>
+            <span className="text-base sm:text-lg">{icon}</span>
             <span className="font-bold text-white drop-shadow-[0_0_8px_rgba(255,255,255,0.7)]">
               {currentFestId === "diwali"
                 ? "शुभ दीपावली • Keds Technology कडून दिवाळीच्या हार्दिक शुभेच्छा!"
                 : `${activeFestival?.greetings.nativeGreeting || "सण उत्सव"} • Keds Technology कडून हार्दिक शुभेच्छा!`}
             </span>
-            <span className="text-base sm:text-lg animate-pulse">✨</span>
+            <span className="text-base sm:text-lg">✨</span>
           </div>
         ) : (
           <div className="inline-flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4.5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium tracking-wide mb-3.5 sm:mb-5 border border-purple-500/40 bg-purple-950/60 text-purple-200 shadow-[0_0_20px_rgba(124,58,237,0.3)] backdrop-blur-sm">
@@ -194,11 +145,10 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
         <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[3.75rem] xl:text-[4.35rem] leading-[1.08] sm:leading-[1.05] tracking-tight text-white mb-3 sm:mb-4">
           Innovate.{" "}
           <span
-            className={`font-serif ${
-              isFestive
-                ? "bg-clip-text text-transparent font-extrabold"
-                : "text-gradient-purple"
-            }`}
+            className={`font-serif ${isFestive
+              ? "bg-clip-text text-transparent font-extrabold"
+              : "text-gradient-purple"
+              }`}
             style={{
               backgroundImage: isFestive
                 ? `linear-gradient(135deg, #ffffff 10%, ${concept.accentColor} 60%, ${concept.primaryColor} 100%)`
@@ -209,11 +159,10 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
             Build.
           </span>{" "}
           <span
-            className={`font-serif ${
-              isFestive
-                ? "bg-clip-text text-transparent font-extrabold"
-                : "text-gradient-purple"
-            }`}
+            className={`font-serif ${isFestive
+              ? "bg-clip-text text-transparent font-extrabold"
+              : "text-gradient-purple"
+              }`}
             style={{
               backgroundImage: isFestive
                 ? `linear-gradient(135deg, ${concept.accentColor} 0%, ${concept.primaryColor} 60%, #ffffff 100%)`
@@ -235,11 +184,10 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
           <button
             type="button"
             onClick={() => setIsConsultationOpen(true)}
-            className={`min-w-[200px] sm:min-w-[240px] px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-white font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 sm:gap-3 cursor-pointer active:scale-95 group shadow-xl shrink-0 ${
-              isFestive
-                ? `bg-gradient-to-r ${concept.buttonGradient}`
-                : "bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(192,132,252,0.6)]"
-            }`}
+            className={`min-w-[200px] sm:min-w-[240px] px-8 sm:px-9 py-3.5 sm:py-4 rounded-full text-white font-bold text-sm sm:text-base transition-all duration-300 flex items-center justify-center gap-2.5 sm:gap-3 cursor-pointer active:scale-95 group shadow-xl shrink-0 ${isFestive
+              ? `bg-gradient-to-r ${concept.buttonGradient}`
+              : "bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 shadow-[0_0_25px_rgba(168,85,247,0.5)] hover:shadow-[0_0_35px_rgba(192,132,252,0.6)]"
+              }`}
             style={{
               boxShadow: isFestive ? `0 0 30px ${concept.buttonShadow}` : undefined,
             }}
@@ -277,12 +225,12 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
       </div>
 
 
-      {/* DIAGONAL CARD ANIMATION */}
+      {/* DIAGONAL CARD ANIMATION - Active across all screens (Mobile, Tablet, Desktop) */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden opacity-25 sm:opacity-40 lg:opacity-100">
         <div className="absolute left-[55%] sm:left-[58%] md:left-[62%] lg:left-[64%] top-[-50%] w-[900px] h-[200%] origin-center -rotate-[30deg] will-change-transform">
           <div
-            ref={trackRef}
-            className="flex flex-col will-change-transform"
+            className="flex flex-col animate-stream-scroll"
+            style={{ transform: "translate3d(0, 0, 0)", backfaceVisibility: "hidden" }}
           >
             {/* Duplicate the cards to create an infinite loop */}
             {[0, 1].map((groupIndex) => (
@@ -296,16 +244,18 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
                   return (
                     <div
                       key={index}
-                      className="relative aspect-[1.32/1] w-[200px] sm:w-[235px] lg:w-[350px] shrink-0 overflow-hidden border-[4px] border-[#2b1b36] bg-[#171219] shadow-[0_16px_40px_rgba(0,0,0,0.7)] transition-all duration-300 rounded-xl group"
+                      className="relative aspect-[1.32/1] w-[200px] sm:w-[235px] lg:w-[350px] shrink-0 overflow-hidden border-[3px] border-[#2b1b36] bg-[#171219] shadow-lg transition-all duration-300 rounded-xl group"
                     >
                       {/* AI Showcase Image */}
                       <Image
                         src={card.image}
                         alt={card.title}
                         fill
-                        className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                        sizes="(max-width: 640px) 200px, 255px"
-                        priority={index < 4}
+                        className="object-cover object-center"
+                        sizes="(max-width: 640px) 200px, (max-width: 1024px) 235px, 350px"
+                        priority={index === 0}
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
                       />
 
                       {/* Subtle gradient vignette overlay */}
@@ -322,7 +272,7 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
                           <span className="h-1.5 w-1.5 rounded-full bg-white/25" />
                         </div>
 
-                        <span className="text-[9px] font-medium uppercase tracking-wider text-white/90 bg-black/60 px-2 py-0.5 rounded-full border border-white/15 backdrop-blur-md">
+                        <span className="text-[9px] font-medium uppercase tracking-wider text-white/90 bg-[#0d0720]/90 px-2 py-0.5 rounded-full border border-white/15">
                           {card.tag}
                         </span>
                       </div>
@@ -342,12 +292,14 @@ export default function HeroSection({ overrideFestivalId }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-        defaultService="Custom Software Architecture"
-      />
+      {/* Consultation Modal - loaded on demand */}
+      {isConsultationOpen && (
+        <ConsultationModal
+          isOpen={isConsultationOpen}
+          onClose={() => setIsConsultationOpen(false)}
+          defaultService="Custom Software Architecture"
+        />
+      )}
     </section>
   );
 }

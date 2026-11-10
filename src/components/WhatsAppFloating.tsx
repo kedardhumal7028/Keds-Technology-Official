@@ -1,10 +1,17 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { MessageCircle, X } from "lucide-react";
 
 export default function WhatsAppFloating() {
+  const [mounted, setMounted] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null;
 
   const prefilledMessage = encodeURIComponent(
     "Hi Keds Technology, I want to discuss a project."
@@ -34,9 +41,9 @@ export default function WhatsAppFloating() {
         target="_blank"
         rel="noreferrer"
         aria-label="Chat with Keds Technology on WhatsApp"
-        className="relative group p-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:shadow-[0_0_40px_rgba(16,185,129,0.8)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center cursor-pointer"
+        className="relative group p-4 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white shadow-[0_0_25px_rgba(16,185,129,0.5)] hover:shadow-[0_0_35px_rgba(16,185,129,0.7)] transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center cursor-pointer"
       >
-        <span className="absolute inset-0 rounded-full bg-emerald-400 animate-ping opacity-30 pointer-events-none" />
+        <span className="absolute inset-0 rounded-full bg-emerald-400/20 pointer-events-none" />
         <MessageCircle className="w-6 h-6 fill-white" />
       </a>
     </div>

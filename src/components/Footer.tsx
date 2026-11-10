@@ -1,9 +1,7 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import KedsLogo from "./KedsLogo";
-import { ArrowUpRight, Shield, Heart } from "lucide-react";
+import { ArrowUpRight, Shield } from "lucide-react";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -182,11 +180,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/ongoing-projects" className="hover:text-cyan-300 transition-colors">
-                  Animated Project Roadmap
-                </Link>
-              </li>
-              <li>
                 <Link href="/portfolio#ath-elite" className="hover:text-cyan-300 transition-colors">
                   Ath Elite Sports Case Study
                 </Link>
@@ -215,9 +208,6 @@ export default function Footer() {
             <Link href="/terms" className="hover:text-white transition-colors">
               Terms of Service
             </Link>
-            <span className="text-zinc-400 flex items-center gap-1">
-              Made with <Heart className="w-3 h-3 text-rose-500 fill-rose-500 inline" /> in Pune, India
-            </span>
           </div>
         </div>
       </div>

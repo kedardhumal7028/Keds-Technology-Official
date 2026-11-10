@@ -2,12 +2,16 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import KedsLogo from "./KedsLogo";
-import ConsultationModal from "./ConsultationModal";
 import { NavbarFestivalDecoration } from "@/features/festival-preview/NavbarFestivalDecoration";
 import { FestivalId } from "@/features/festival-preview/festivalData";
 import { ChevronDown, Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), {
+  ssr: false,
+});
 
 interface NavbarProps {
   overrideFestivalId?: FestivalId;
@@ -25,7 +29,7 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -46,20 +50,15 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
       children: [
         { name: "All Portfolio Showcase", href: "/portfolio", desc: "Filterable gallery of completed work" },
         { name: "Live Deployed Projects", href: "/live-projects", desc: "Active client production systems", badge: "Live" },
-        { name: "Ongoing Roadmap", href: "/ongoing-projects", desc: "5-stage animated project tracking", badge: "Roadmap" },
       ],
     },
     { name: "Contact", href: "/contact" },
   ];
 
-  const isPreview = pathname === "/festival-preview";
-
   return (
     <>
       <header
-        className={`${
-          isPreview ? "relative" : "fixed top-0 left-0 right-0"
-        } z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           scrolled
             ? "bg-[#000000]/85 backdrop-blur-xl border-b border-white/[0.08] py-3.5 shadow-[0_10px_30px_rgba(0,0,0,0.8)]"
             : "bg-[#070210]/85 backdrop-blur-md border-b border-purple-500/20 py-3.5 sm:py-4 shadow-[0_4px_20px_rgba(124,58,237,0.15)]"
@@ -76,8 +75,8 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
           </div>
 
 
-          {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2">
+          {/* Desktop Navigation Links - Right Aligned */}
+          <nav className="hidden lg:flex items-center space-x-1 xl:space-x-2 ml-auto">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
 
@@ -92,8 +91,7 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
                     <button
                       className={`relative flex items-center gap-1.5 px-3 py-2 text-sm font-medium transition-colors ${
                         pathname.startsWith("/portfolio") ||
-                        pathname.startsWith("/live-projects") ||
-                        pathname.startsWith("/ongoing-projects")
+                        pathname.startsWith("/live-projects")
                           ? "text-white"
                           : "text-zinc-300 hover:text-white"
                       }`}
@@ -110,7 +108,7 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
 
                     {/* Dropdown Menu */}
                     <div
-                      className={`absolute top-full left-0 w-72 pt-2 transition-all duration-200 ${
+                      className={`absolute top-full right-0 w-72 pt-2 transition-all duration-200 ${
                         projectsDropdownOpen
                           ? "opacity-100 visible translate-y-0"
                           : "opacity-0 invisible -translate-y-2 pointer-events-none"
@@ -121,7 +119,7 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
                           <Link
                             key={child.name}
                             href={child.href}
-                            className="block p-2.5 rounded-xl hover:bg-purple-950/40 border border-transparent hover:border-purple-500/20 transition-all group/item"
+                            className="block p-2.5 rounded-xl hover:bg-purple-950/40 border border-purple-500/0 hover:border-purple-500/20 transition-all group/item"
                           >
                             <div className="flex items-center justify-between">
                               <span className="text-sm font-semibold text-zinc-100 group-hover/item:text-purple-300 transition-colors">
@@ -164,26 +162,8 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
             })}
           </nav>
 
-          {/* Right Action CTA Button */}
-          <div className="hidden sm:flex items-center gap-3">
-            <button
-              onClick={() => setIsConsultationOpen(true)}
-              className="relative inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-purple-600 via-purple-700 to-fuchsia-600 hover:from-purple-500 hover:to-fuchsia-500 border border-purple-400/40 shadow-[0_0_20px_rgba(168,85,247,0.45)] hover:shadow-[0_0_30px_rgba(192,132,252,0.6)] transition-all duration-300 cursor-pointer active:scale-95 group"
-            >
-              <Sparkles className="w-3.5 h-3.5 text-purple-200 animate-pulse" />
-              <span>Get Free Consultation</span>
-              <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </button>
-          </div>
-
           {/* Mobile Menu Trigger */}
-          <div className="flex items-center gap-2 lg:hidden">
-            <button
-              onClick={() => setIsConsultationOpen(true)}
-              className="sm:hidden px-3 py-1.5 rounded-full text-xs font-semibold text-white bg-purple-600/80 border border-purple-400/30"
-            >
-              Consult
-            </button>
+          <div className="flex items-center gap-2 lg:hidden ml-auto">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle menu"
@@ -229,12 +209,6 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
                 >
                   Live Deployed Projects
                 </Link>
-                <Link
-                  href="/ongoing-projects"
-                  className="block py-1 text-xs text-zinc-300 hover:text-purple-300"
-                >
-                  Ongoing Animated Roadmap
-                </Link>
               </div>
               <Link
                 href="/contact"
@@ -260,11 +234,13 @@ export default function Navbar({ overrideFestivalId }: NavbarProps = {}) {
         )}
       </header>
 
-      {/* Interactive Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-      />
+      {/* Interactive Consultation Modal - loaded on demand */}
+      {isConsultationOpen && (
+        <ConsultationModal
+          isOpen={isConsultationOpen}
+          onClose={() => setIsConsultationOpen(false)}
+        />
+      )}
     </>
   );
 }

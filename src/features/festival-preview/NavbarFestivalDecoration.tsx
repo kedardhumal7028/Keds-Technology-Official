@@ -76,12 +76,15 @@ export function NavbarFestivalDecoration({ overrideFestivalId }: NavbarFestivalD
         .animate-kandilSway {
           animation: kandilSway 4s ease-in-out infinite;
           transform-origin: top center;
+          will-change: transform;
         }
         .animate-sparkPulse {
-          animation: sparkPulse 1.8s ease-in-out infinite;
+          animation: sparkPulse 2s ease-in-out infinite;
+          will-change: transform, opacity;
         }
         .animate-burstShoot {
-          animation: burstShoot 2.4s ease-out infinite;
+          animation: burstShoot 2.6s ease-out infinite;
+          will-change: transform, opacity;
         }
         .animate-diyaFlicker {
           animation: diyaFlicker 1.4s ease-in-out infinite;
@@ -106,7 +109,7 @@ export function NavbarFestivalDecoration({ overrideFestivalId }: NavbarFestivalD
               <polygon points="30,20 14,36 46,36" fill="url(#kTop)" stroke="#FEF08A" strokeWidth="0.8" />
               <polygon points="14,36 30,58 46,36" fill="url(#kBot)" stroke="#FDE68A" strokeWidth="0.8" />
               <polygon points="30,26 18,36 30,48 42,36" fill="#FDE047" opacity="0.9" className="animate-pulse" />
-              <circle cx="30" cy="36" r="4.5" fill="#FFFFFF" className="animate-ping" />
+              <circle cx="30" cy="36" r="3.5" fill="#FFFFFF" opacity="0.9" />
               <path d="M16,36 Q14,75 12,94" stroke="#F59E0B" strokeWidth="1.2" strokeLinecap="round" />
               <path d="M23,46 Q22,80 21,102" stroke="#FDE047" strokeWidth="1.5" strokeLinecap="round" />
               <path d="M30,58 L30,110" stroke="#FEF08A" strokeWidth="2" strokeLinecap="round" />
@@ -128,18 +131,8 @@ export function NavbarFestivalDecoration({ overrideFestivalId }: NavbarFestivalD
             </svg>
           </div>
 
-          {/* Glowing Diya near nav items */}
-          <div className="hidden md:flex absolute top-3.5 left-[230px] lg:left-[270px] z-30 items-center gap-1.5 opacity-95">
-            <svg className="w-6 h-6 drop-shadow-[0_0_10px_#F59E0B]" viewBox="0 0 32 32" fill="none">
-              <path d="M4 18 Q16 28 28 18 Q20 22 12 22 Z" fill="#9A3412" stroke="#EA580C" strokeWidth="1" />
-              <ellipse cx="16" cy="18" rx="10" ry="3.5" fill="#EA580C" />
-              <ellipse cx="16" cy="12" rx="3.5" ry="7" fill="#FDE047" className="animate-diyaFlicker" />
-              <ellipse cx="16" cy="13" rx="1.8" ry="4" fill="#FFFFFF" className="animate-diyaFlicker" />
-            </svg>
-          </div>
-
-          {/* Bursting Crackers & Sparklers on right */}
-          <div className="absolute top-1 right-2 sm:right-6 z-30 flex items-center gap-2">
+          {/* Bursting Crackers & Sparklers on right (Tablet & Desktop) */}
+          <div className="hidden sm:flex absolute top-1 right-6 z-30 items-center gap-2">
             <div className="relative w-8 h-8 sm:w-10 sm:h-10 animate-burstShoot">
               <svg className="w-full h-full drop-shadow-[0_0_12px_#F59E0B]" viewBox="0 0 50 50" fill="none">
                 <circle cx="25" cy="25" r="3" fill="#FFFFFF" />

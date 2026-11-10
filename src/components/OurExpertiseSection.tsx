@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import ConsultationModal from "./ConsultationModal";
+import dynamic from "next/dynamic";
 import {
   Globe,
   Smartphone,
@@ -17,6 +17,10 @@ import {
   CheckCircle2,
   Terminal,
 } from "lucide-react";
+
+const ConsultationModal = dynamic(() => import("./ConsultationModal"), {
+  ssr: false,
+});
 
 export default function OurExpertiseSection() {
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
@@ -216,12 +220,14 @@ export default function OurExpertiseSection() {
 
       </div>
 
-      {/* Consultation Modal */}
-      <ConsultationModal
-        isOpen={isConsultationOpen}
-        onClose={() => setIsConsultationOpen(false)}
-        defaultService={activeService}
-      />
+      {/* Consultation Modal - loaded on demand */}
+      {isConsultationOpen && (
+        <ConsultationModal
+          isOpen={isConsultationOpen}
+          onClose={() => setIsConsultationOpen(false)}
+          defaultService={activeService}
+        />
+      )}
     </section>
   );
 }

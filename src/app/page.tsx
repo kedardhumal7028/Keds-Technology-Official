@@ -1,10 +1,12 @@
 import React from "react";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import HeroSection from "@/components/HeroSection";
+import ClientsMarqueeSection from "@/components/ClientsMarqueeSection";
 import AboutCompanySection from "@/components/AboutCompanySection";
 import OurExpertiseSection from "@/components/OurExpertiseSection";
-import ContactFormSection from "@/components/ContactFormSection";
-import { HomeFestivalPopup } from "@/features/festival-preview/HomeFestivalPopup";
+
+const ContactFormSection = dynamic(() => import("@/components/ContactFormSection"));
 
 
 export const metadata: Metadata = {
@@ -61,11 +63,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <main className="w-full overflow-hidden">
-      {/* Automated Multi-Year Festival Greeting Poster (Pops up automatically for visitors during festival window) */}
-      <HomeFestivalPopup />
-
       {/* 1. Hero Section: Diagonal Infinite Cards Stream with AI Images */}
-
       <HeroSection />
 
       {/* 2. About Section: Who We Are, Mission & Why Choose Keds Technology */}
@@ -74,7 +72,10 @@ export default function HomePage() {
       {/* 3. Our Expertise Section: Core Engineering Services (Web, Mobile, HRMS, CRM, ERP, etc.) */}
       <OurExpertiseSection />
 
-      {/* 4. Contact Section: Get In Touch (Direct Inquiries, WhatsApp, Form) */}
+      {/* 4. Client Brands Marquee: Movable Infinite Ribbon (HeartPhysio, Bhilare Travels, Ath-Elite, Keds) */}
+      <ClientsMarqueeSection />
+
+      {/* 5. Contact Section: Get In Touch (Direct Inquiries, WhatsApp, Form) */}
       <ContactFormSection />
     </main>
   );

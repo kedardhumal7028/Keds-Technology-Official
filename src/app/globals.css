@@ -77,3 +77,39 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #7c3aed;
 }
+
+/* GPU Hardware-Accelerated Infinite Card Stream (0% Main Thread JS) */
+@keyframes streamScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, -50%, 0);
+  }
+}
+
+.animate-stream-scroll {
+  animation: streamScroll 42s linear infinite;
+  will-change: transform;
+}
+
+/* Horizontal Infinite Client Logo Marquee */
+@keyframes marqueeScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.animate-marquee-scroll {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.animate-marquee-scroll:hover {
+  animation-play-state: paused;
+}
